@@ -1,2 +1,2 @@
 language = "python3"
-run = "python 'KNN Lab.py'"
+run = "python3 'KNN Lab.py'"
