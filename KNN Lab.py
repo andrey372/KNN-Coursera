@@ -3,7 +3,7 @@ import wget
 import numpy as np
 from sklearn import metrics
 import matplotlib.pyplot as plt
-from matplotlib.ticker import NullFormatter
+#from matplotlib.ticker import NullFormatter
 import pandas as pd
 import numpy as np
 import matplotlib.ticker as ticker
@@ -32,5 +32,4 @@ yhat_test = neigh.predict(X_test)
 print(
     metrics.accuracy_score(y_train, yhat_train),
     metrics.accuracy_score(y_test, yhat_test),
-    metrics.classification_report(y_test, yhat_test),
-    metrics.confusion_matrix(y_test, yhat_test), neigh.score(X_test, y_test))
+    metrics.classification_report(y_test, yhat_test))
