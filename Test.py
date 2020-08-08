@@ -1,10 +1,7 @@
 # Import libraries
-from sklearn import datasets
+from sklearn.datasets import make_blobs
 from matplotlib import pyplot as plt
 
-# Get regression data from scikit-learn
-x, y = datasets.make_regression(n_samples=20, n_features=1, noise=0.5)
-
-# Vizualize the data
-plt.scatter(x, y)
+X, y = make_blobs(n_samples=5000, centers=[[4,4], [-2, -1], [2, -3], [1, 1]], cluster_std=0.9)
+plt.scatter(X[:,0], X[:,1], marker='.')
 plt.show()
