@@ -5,3 +5,6 @@ from matplotlib import pyplot as plt
 X, y = make_blobs(n_samples=5000, centers=[[4,4], [-2, -1], [2, -3], [1, 1]], cluster_std=0.9)
 plt.scatter(X[:,0], X[:,1], marker='.')
 plt.show()
+
+from sklear.clister import KMeans
+
