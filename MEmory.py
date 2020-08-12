@@ -16,3 +16,7 @@ kl.elbow
 from sklearn.cluster import KMeans
 kmeans = KMeans(init='k-means', n_clusters= , n_init= ).fit(X)
 kmeans.labels_
+
+
+#pd
+df.apply(pd.to_numeric, errors='coerce')
