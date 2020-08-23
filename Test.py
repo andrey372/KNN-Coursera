@@ -9,15 +9,25 @@ import matplotlib.pyplot as plt
 import matplotlib
 from sklearn.datasets import load_digits
 import scipy.cluster.hierarchy as shc
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import DBSCAN, AgglomerativeClustering
 from sklearn.metrics import adjusted_rand_score
 import seaborn as sns
 
 
-employee_numbers = [2, 9, 18, 28]
-employee_names = ["Candice", "Ava", "Andrew", "Lucas"]
+#blobs
+
+X, y  = make_blobs(n_samples=500, centers=[[5, 5], [0, 0], [1, 5],[5, -1]], cluster_std=0.9)
+
+#dendogram
+#dendogram = shc.dendrogram(shc.linkage(X, method='ward'))
+#plt.show()
+
+#model
+X_scaled = StandardScaler().fit_transform(X)
+db = DBSCAN(eps = 0.3, min_samples=10).fit(X_scaled)
+
+core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
+core_samples_mask[db.core_sample_indices_] = True
 
 
-table = pd.DataFrame(employee_names, employee_numbers).reset_index()
-
-print(table)
+print(db.core_sample_indices_)
