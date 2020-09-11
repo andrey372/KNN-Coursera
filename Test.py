@@ -30,4 +30,4 @@ core_samples_mask = np.zeros_like(db.labels_, dtype=bool)
 core_samples_mask[db.core_sample_indices_] = True
 
 
-print(db.core_sample_indices_)
+print('twst')
